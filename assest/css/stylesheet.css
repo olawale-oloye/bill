@@ -1,0 +1,247 @@
+/* Global Variables */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", "Trebuchet MS", "Lucida Sans Unicode",
+    "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+:root {
+  /* Primary Colors  */
+  --Strong_cyan: hsl(172, 67%, 45%);
+
+  /* Neutral Colors  */
+
+  --Very-dark-cyan: hsl(183, 100%, 15%);
+  --Dark-grayish-cyan: hsl(186, 14%, 43%);
+  --Grayish-cyan: hsl(184, 14%, 56%);
+  --Light-grayish-cyan: hsl(185, 41%, 84%);
+  --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --Reddish: #de400c;
+  --White: hsl(0, 0%, 100%);
+  --Black: #000000;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+/* Body  */
+body,
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: var(--Light-grayish-cyan);
+}
+
+/* Form  */
+form {
+  border: 1px solid var(--White);
+  border-radius: 20px;
+  box-shadow: 0 3px 7px var(--Black);
+  margin: 3rem auto;
+  width: 55%;
+  background-color: var(--White);
+  padding: 20px 30px;
+}
+
+.head-txt {
+  text-align: center;
+  margin-top: 3rem;
+  color: var(--Dark-grayish-cyan);
+}
+
+.bill-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+form input {
+  display: block;
+  border-radius: 5px;
+  height: 30px;
+  width: 100%;
+  outline: none;
+  border: 1px solid var(--Strong_cyan);
+}
+
+input ::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+form input::placeholder {
+  text-align: right;
+  font: 1rem;
+}
+
+form label,
+h3 {
+  font-size: 0.8rem;
+  font-weight: 100;
+  color: var(--Grayish-cyan);
+}
+
+.btn-row1,
+.btn-row2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.btn-row1 button,
+.btn-row2 button {
+  border: 0px solid var(--Dark-grayish-cyan);
+  border-radius: 5px;
+  width: 100%;
+  height: 2rem;
+  padding: 0 5px;
+  text-align: center;
+  font-weight: bold;
+  color: var(--White);
+  background-color: var(--Very-dark-cyan);
+  transition: 0.3s;
+}
+
+.btn-row1 button:hover,
+.btn-row2 button:hover {
+  border: 0px solid var(--Dark-grayish-cyan);
+  color: var(--Very-dark-cyan);
+  background-color: var(--Light-grayish-cyan);
+  transition: 0.3s;
+}
+
+.bill-cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--Reddish);
+}
+
+.bill,
+.btn-row2 {
+  margin-bottom: 1.2rem;
+}
+
+.bill {
+  background-image: url(/assest/images/icon-dollar.svg);
+  background-repeat: no-repeat;
+  background-color: var(--White);
+  background-position-y: center;
+  position: relative;
+}
+
+.input-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--Light-grayish-cyan);
+  border-radius: 5px;
+}
+
+.bill:focus {
+  border: 1px solid var(--Reddish);
+}
+
+.custom-entry input {
+  color: var(--Very-dark-cyan);
+  font-weight: bolder;
+  padding: 0 10px;
+}
+
+.custom-entry input::placeholder {
+  text-align: center;
+  color: var(--Very-dark-cyan);
+  font-weight: bolder;
+}
+
+.num-people {
+  background-image: url(/assest/images/icon-person.svg);
+  background-repeat: no-repeat;
+  background-color: var(--White);
+  background-position-y: center;
+}
+
+.num-people:focus {
+  border: 1px solid var(--Reddish);
+}
+
+.right-col {
+  border: 1px solid var(--Very-dark-cyan);
+  border-radius: 15px;
+  background-color: var(--Very-dark-cyan);
+  padding: 20px 10px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.inner-left {
+  display: grid;
+  gap: 3rem;
+}
+
+.num-ppl {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.error {
+  color: var(--Reddish);
+}
+
+.inner-right {
+  display: grid;
+  gap: 2.5rem;
+  font-size: 2.5rem;
+  color: var(--Strong_cyan);
+}
+
+.inner-left h2,
+.inner-left-bottom h2 {
+  color: var(--White);
+  font-size: 0.8rem;
+}
+
+.inner-left h2 span,
+.inner-left-bottom p {
+  font-size: 0.7rem;
+  margin-bottom: 2rem;
+  color: var(--Grayish-cyan);
+}
+
+.rst-btn button {
+  border: 1px solid var(--Dark-grayish-cyan);
+  border-radius: 5px;
+  text-align: center;
+  background-color: var(--Dark-grayish-cyan);
+  color: var(--Strong_cyan);
+  margin: 12px auto;
+  width: 100%;
+  padding: 8px 0;
+  font-weight: 600;
+  transition: 0.5s;
+}
+
+.rst-btn button:hover {
+  border: 1px solid var(--Dark-grayish-cyan);
+  background-color: var(--Light-grayish-cyan);
+  color: var(--Very-dark-cyan);
+  transition: 0.5s;
+}

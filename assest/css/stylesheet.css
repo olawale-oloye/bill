@@ -68,7 +68,7 @@ form input {
   width: 100%;
   outline: none;
   border: 1px solid var(--Strong_cyan);
-  padding: 1.7rem;
+  padding: 0.7rem 0.3rem 0.7rem 1.85rem;
 }
 
 input ::-webkit-outer-spin-button,

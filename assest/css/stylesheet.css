@@ -143,7 +143,7 @@ form h3 {
   background-repeat: no-repeat;
   background-color: var(--White);
   background-position-y: center;
-  background-position-x: calc(3%);
+  background-position-x: calc(2%);
   position: relative;
 }
 
@@ -177,7 +177,7 @@ form h3 {
   background-repeat: no-repeat;
   background-color: var(--White);
   background-position-y: center;
-  background-position-x: calc(3%);
+  background-position-x: calc(2%);
 }
 
 .num-people:focus {

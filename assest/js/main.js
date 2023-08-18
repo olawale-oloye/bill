@@ -44,7 +44,7 @@ function calcTipTotal(tipPercent) {
     ((bill.value * (+tipPercent / 100)) / numPeople.value).toFixed(2)
   );
   tipAmountPlaceholder.textContent = `$${tipAmount} `;
-  totalPerPerson = tipAmount + Number(bill.value);
+  totalPerPerson = Number((tipAmount + Number(bill.value)) / numPeople.value);
   totalPerPersonPlaceholder.textContent = `$${totalPerPerson}`;
 }
 

@@ -21,6 +21,7 @@
   --Reddish: #de400c;
   --White: hsl(0, 0%, 100%);
   --Black: #000000;
+  --Light-black: #0000005d;
 }
 
 button {
@@ -40,7 +41,7 @@ html {
 form {
   border: 1px solid var(--White);
   border-radius: 20px;
-  box-shadow: 0 3px 7px var(--Black);
+  box-shadow: 0 3px 3px var(--Light-black);
   margin: 3rem auto;
   width: 55%;
   background-color: var(--White);
@@ -68,7 +69,7 @@ form input {
   width: 100%;
   outline: none;
   border: 1px solid var(--Strong_cyan);
-  padding: 0.7rem 0.3rem 0.7rem 1.85rem;
+  padding: 0.7rem 0.3rem 0.7rem 1.4rem;
 }
 
 input ::-webkit-outer-spin-button,

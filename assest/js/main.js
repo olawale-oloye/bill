@@ -44,7 +44,9 @@ function calcTipTotal(tipPercent) {
     ((bill.value * (+tipPercent / 100)) / numPeople.value).toFixed(2)
   );
   tipAmountPlaceholder.textContent = `$${tipAmount} `;
-  totalPerPerson = Number((tipAmount + Number(bill.value)) / numPeople.value);
+  totalPerPerson = Number(
+    ((tipAmount + Number(bill.value)) / numPeople.value).toFixed(2)
+  );
   totalPerPersonPlaceholder.textContent = `$${totalPerPerson}`;
 }
 
@@ -76,6 +78,11 @@ form.addEventListener("click", function (e) {
   tip50.addEventListener("click", function () {
     if (validateInputFields() === true) return;
     calcTipTotal(50);
+  });
+
+  tipCustom.addEventListener("change", function () {
+    if (validateInputFields() === true) return;
+    calcTipTotal(tipCustom.value);
   });
 });
 

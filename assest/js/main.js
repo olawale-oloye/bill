@@ -2,11 +2,12 @@
 
 const form = document.querySelector("form");
 const bill = document.querySelector(".bill");
-const tip5 = document.querySelector(".tip5");
+/* const tip5 = document.querySelector(".tip5");
 const tip10 = document.querySelector(".tip10");
 const tip15 = document.querySelector(".tip15");
 const tip25 = document.querySelector(".tip25");
-const tip50 = document.querySelector(".tip50");
+const tip50 = document.querySelector(".tip50"); */
+const tipBtns = document.querySelectorAll("button");
 const tipCustom = document.querySelector(".tip-custom");
 const numPeople = document.querySelector(".num-people");
 const tipAmountPlaceholder = document.querySelector(".inner-right-top span");
@@ -43,23 +44,51 @@ function calcTipTotal(tipPercent) {
   tipAmount = Number(
     ((bill.value * (+tipPercent / 100)) / numPeople.value).toFixed(2)
   );
+  console.log(tipAmount);
   tipAmountPlaceholder.textContent = `$${tipAmount} `;
   totalPerPerson = Number(
     ((tipAmount + Number(bill.value)) / numPeople.value).toFixed(2)
   );
   totalPerPersonPlaceholder.textContent = `$${totalPerPerson}`;
+  console.log(totalPerPerson);
 }
 
 // Validate form inputs
+tipCustom.addEventListener("Keydown", (e) => {
+  if (e.key === "Enter") {
+    if (tipCustom.value === "") {
+      /* 
+      console.log(tipCustom.value);
+      console.log("Please input a value"); */
+      return;
+    } else if (validateInputFields() == true) {
+      return;
+    } else {
+      calcTipTotal(tipCustom.value);
+    }
+  }
+});
+
+// If any of the button is not clicked, function should not run? can we implement this ?
 
 form.addEventListener("click", function (e) {
   e.preventDefault();
 
-  tip5.addEventListener("click", function () {
+  tipBtns.forEach((tipBtn) => {
+    tipBtn.addEventListener("click", function () {
+      if (validateInputFields() === true) return;
+      const perValue = +tipBtn.textContent.replace(/%/g, "");
+      calcTipTotal(perValue);
+    });
+  });
+
+  // console.log(Number(tipCustom.value));
+
+  /*  tip5.addEventListener("click", function () {
     if (validateInputFields() === true) return;
     calcTipTotal(5);
   });
-
+  
   tip10.addEventListener("click", function () {
     if (validateInputFields() === true) return;
     calcTipTotal(10);
@@ -83,7 +112,7 @@ form.addEventListener("click", function (e) {
   tipCustom.addEventListener("change", function () {
     if (validateInputFields() === true) return;
     calcTipTotal(tipCustom.value);
-  });
+  }); */
 });
 
 reset.addEventListener("click", function () {
